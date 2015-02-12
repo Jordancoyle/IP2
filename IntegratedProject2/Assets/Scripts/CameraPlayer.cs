@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CamaraFollow : MonoBehaviour {
+public class CameraPlayer : MonoBehaviour {
 
-	public Transform pla;
+	public Transform player;
 
 	// Use this for initialization
 	void Start () {
-
-		//pla = GameObject.Find("Player");
 	
 	}
 	
