@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour {
 
 	public float speed = 7.0f;
 	public float jumpForce = 200.0f;
+	public float airRes = 20.0f;
 	public Transform groundCheck;
 	public LayerMask groundMask;
 	private float groundRadius = 0.3f;
@@ -43,6 +44,7 @@ public class Movement : MonoBehaviour {
 			{
 				grounded = false;
 				rigidbody2D.AddForce (new Vector2(0.0f, jumpForce));
+				rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
 			}
 			
 		}
@@ -56,6 +58,7 @@ public class Movement : MonoBehaviour {
 
 		//moves the player in a straight line
 		rigidbody2D.AddForce (new Vector2(speed, 0.0f));
+		
 
 	
 	}
