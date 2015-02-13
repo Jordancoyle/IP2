@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour {
 			{
 				grounded = false;
 				rigidbody2D.AddForce (new Vector2(0.0f, jumpForce));
-				rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
+				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
 			}
 			
 		}
@@ -57,7 +57,12 @@ public class Movement : MonoBehaviour {
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, groundMask);
 
 		//moves the player in a straight line
-		rigidbody2D.AddForce (new Vector2(speed, 0.0f));
+		//rigidbody2D.AddForce (new Vector2(speed, 0.0f));
+
+		if(grounded)
+		{
+			rigidbody2D.AddForce (new Vector2(speed, 0.0f));
+		}
 		
 
 	
