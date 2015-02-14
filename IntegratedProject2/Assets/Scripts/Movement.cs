@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour {
 
 	public float speed = 7.0f;
 	public float jumpForce = 300.0f;
+	public float andJumpForce = 100;
 	public float airRes = 20.0f;
 	public Transform groundCheck;
 	public LayerMask groundMask;
@@ -47,6 +48,18 @@ public class Movement : MonoBehaviour {
 				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
 			}
 			
+		}
+
+		if(Input.touchCount == 1)
+		{
+			//checks if player is grounded before jumping
+			if(grounded)
+			{
+				grounded = false;
+				rigidbody2D.AddForce (new Vector2(0.0f, andJumpForce));
+				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
+			}
+
 		}
 	}
 
