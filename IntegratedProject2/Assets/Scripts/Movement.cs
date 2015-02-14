@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour {
 
 	public float speed = 7.0f;
 	public float jumpForce = 300.0f;
+	public float andJumpForce = 10;
 	public float airRes = 20.0f;
 	public Transform groundCheck;
 	public LayerMask groundMask;
@@ -44,9 +45,21 @@ public class Movement : MonoBehaviour {
 			{
 				grounded = false;
 				rigidbody2D.AddForce (new Vector2(0.0f, jumpForce));
-				rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
+				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
 			}
 			
+		}
+
+		if(Input.touchCount == 1)
+		{
+			//checks if player is grounded before jumping
+			if(grounded)
+			{
+				grounded = false;
+				rigidbody2D.AddForce (new Vector2(0.0f, andJumpForce));
+				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
+			}
+
 		}
 	}
 
@@ -57,7 +70,12 @@ public class Movement : MonoBehaviour {
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, groundMask);
 
 		//moves the player in a straight line
-		rigidbody2D.AddForce (new Vector2(speed, 0.0f));
+		//rigidbody2D.AddForce (new Vector2(speed, 0.0f));
+
+		if(grounded)
+		{
+			rigidbody2D.AddForce (new Vector2(speed, 0.0f));
+		}
 		
 
 	
