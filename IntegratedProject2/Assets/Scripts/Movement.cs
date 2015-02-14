@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour {
 
 	public float speed = 7.0f;
 	public float jumpForce = 300.0f;
-	public float andJumpForce = 100;
+	public float andJumpForce = 10;
 	public float airRes = 20.0f;
 	public Transform groundCheck;
 	public LayerMask groundMask;
