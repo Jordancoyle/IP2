@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour {
 
 	public float speed = 7.0f;
 	public float jumpForce = 300.0f;
-	public float andJumpForce = 10;
+	public float altJumpForce = 10;
 	public float airRes = 20.0f;
 	public Transform groundCheck;
 	public LayerMask groundMask;
@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour {
 			if(grounded)
 			{
 				grounded = false;
-				rigidbody2D.AddForce (new Vector2(0.0f, andJumpForce));
+				rigidbody2D.AddForce (new Vector2(0.0f, altJumpForce));
 				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
 			}
 
