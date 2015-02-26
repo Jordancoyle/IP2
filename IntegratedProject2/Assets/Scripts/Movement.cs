@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour {
 	public Transform groundCheck;
 	public LayerMask groundMask;
 	public float groundRadius = 0.2f;
-	private bool grounded;
+	private bool grounded = false;
 	//private Touch touch;
 
 	// Use this for initialization
@@ -39,20 +39,14 @@ public class Movement : MonoBehaviour {
 
 	void Update()
 	{
-
-		if(grounded)
-		{
-			Debug.Log ("true");
-		}
-
+		
 		//checks button input
 		if(Input.GetButtonDown("Jump") && grounded == true)
 		{
 			//checks if player is grounded before jumping
 				grounded = false;
-				Debug.Log ("false");
 				rigidbody2D.AddForce (new Vector2(0.0f, jumpForce));
-				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
+				rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
 	
 			
 		}
@@ -64,7 +58,7 @@ public class Movement : MonoBehaviour {
 			{
 				grounded = false;
 				rigidbody2D.AddForce (new Vector2(0.0f, altJumpForce));
-				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
+				rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
 			}
 
 		}
