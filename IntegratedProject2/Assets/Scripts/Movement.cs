@@ -40,17 +40,20 @@ public class Movement : MonoBehaviour {
 	void Update()
 	{
 
+		if(grounded)
+		{
+			Debug.Log ("true");
+		}
+
 		//checks button input
-		if(Input.GetButtonDown("Jump"))
+		if(Input.GetButtonDown("Jump") && grounded == true)
 		{
 			//checks if player is grounded before jumping
-			if(grounded == true)
-			{
 				grounded = false;
 				Debug.Log ("false");
 				rigidbody2D.AddForce (new Vector2(0.0f, jumpForce));
 				//rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
-			}
+	
 			
 		}
 
@@ -76,7 +79,7 @@ public class Movement : MonoBehaviour {
 		//moves the player in a straight line
 		//rigidbody2D.AddForce (new Vector2(speed, 0.0f));
 
-		if(grounded = true && rigidbody2D.velocity.magnitude < maxSpeed)
+		if(grounded == true && rigidbody2D.velocity.magnitude < maxSpeed)
 		{
 			rigidbody2D.AddForce (new Vector2(speed, 0.0f));
 		}

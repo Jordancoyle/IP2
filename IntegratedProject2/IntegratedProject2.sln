@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{ACCC648E-8B9A-8299-F6D7-49D3A987808C}") = "IntegratedProject2", "Assembly-CSharp.csproj", "{EA6C6460-34DA-6D47-8C1B-8A816F212234}"
 EndProject
-Project("{ACCC648E-8B9A-8299-F6D7-49D3A987808C}") = "IntegratedProject2", "Assembly-UnityScript-firstpass.unityproj", "{31AE9EE3-4436-7E87-4921-1B64002807BA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,16 +13,11 @@ Global
 		{EA6C6460-34DA-6D47-8C1B-8A816F212234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA6C6460-34DA-6D47-8C1B-8A816F212234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA6C6460-34DA-6D47-8C1B-8A816F212234}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31AE9EE3-4436-7E87-4921-1B64002807BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31AE9EE3-4436-7E87-4921-1B64002807BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31AE9EE3-4436-7E87-4921-1B64002807BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31AE9EE3-4436-7E87-4921-1B64002807BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-																															GlobalSection(MonoDevelopProperties) = preSolution
+																																GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																												GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> parent of 921e65e... Base slide and project and scene changes
