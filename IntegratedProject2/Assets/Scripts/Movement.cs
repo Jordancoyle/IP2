@@ -4,6 +4,7 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
 	public float speed = 7.0f;
+	public float maxSpeed = 30.0f;
 	public float jumpForce = 300.0f;
 	public float altJumpForce = 10;
 	public float airRes = 20.0f;
@@ -15,6 +16,7 @@ public class Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 
 	
 	}
@@ -37,6 +39,7 @@ public class Movement : MonoBehaviour {
 
 	void Update()
 	{
+
 		//checks button input
 		if(Input.GetButtonDown("Jump"))
 		{
@@ -72,7 +75,7 @@ public class Movement : MonoBehaviour {
 		//moves the player in a straight line
 		//rigidbody2D.AddForce (new Vector2(speed, 0.0f));
 
-		if(grounded)
+		if(grounded && rigidbody2D.velocity.magnitude < maxSpeed)
 		{
 			rigidbody2D.AddForce (new Vector2(speed, 0.0f));
 		}

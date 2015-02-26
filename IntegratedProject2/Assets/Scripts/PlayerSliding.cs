@@ -13,10 +13,14 @@ public class PlayerSliding : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
 		if(Input.GetButton("Slide"))
 		{
 			gameObject.layer = 10;
-			rigidbody2D.AddForce(new Vector2(-slideFriction, 0.0f));
+			if(rigidbody2D.velocity.magnitude > 0.0f)
+			{
+				rigidbody2D.AddForce(new Vector2(-slideFriction, 0.0f));
+			}
 		}
 		else{
 			gameObject.layer = 0;
