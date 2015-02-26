@@ -75,7 +75,7 @@ public class Movement : MonoBehaviour {
 		//moves the player in a straight line
 		//rigidbody2D.AddForce (new Vector2(speed, 0.0f));
 
-		if(grounded && rigidbody2D.velocity.magnitude < maxSpeed)
+		if(grounded = true && rigidbody2D.velocity.magnitude < maxSpeed)
 		{
 			rigidbody2D.AddForce (new Vector2(speed, 0.0f));
 		}
