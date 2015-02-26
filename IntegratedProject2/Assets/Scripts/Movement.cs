@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour {
 	public float airRes = 20.0f;
 	public Transform groundCheck;
 	public LayerMask groundMask;
-	private float groundRadius = 0.2f;
+	public float groundRadius = 0.2f;
 	private bool grounded;
 	//private Touch touch;
 
