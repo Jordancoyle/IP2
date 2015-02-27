@@ -1,0 +1,55 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class ObstacleSpawn : MonoBehaviour {
+
+	public GameObject[] lowDanger;
+	public GameObject[] medDanger;
+	public GameObject[] highDanger;
+	public float minSpawn = 10.0f;
+	public float maxSpawn = 12.0f;
+	public float lowTime;
+	public float medTime;
+	public float highTime;
+	
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	void LowSpawn()
+	{
+		Instantiate(lowDanger[Random.Range (0, lowDanger.Length)], transform.position, Quaternion.identity);
+		Invoke("LowSpawn", Random.Range (minSpawn, maxSpawn));
+	}
+
+	void MedSpawn()
+	{
+		Instantiate(medDanger[Random.Range (0, medDanger.Length)], transform.position, Quaternion.identity);
+		Invoke("MedSpawn", Random.Range (minSpawn, maxSpawn));
+	}
+
+	void HighSpawn()
+	{
+		Instantiate(highDanger[Random.Range (0, highDanger.Length)], transform.position, Quaternion.identity);
+		Invoke("HighSpawn", Random.Range (minSpawn, maxSpawn));
+	}
+
+	void Update()
+	{
+		if(Time.timeSinceLevelLoad > lowTime && Time.timeSinceLevelLoad < medTime)
+		{
+			LowSpawn();
+		}
+
+		if (Time.timeSinceLevelLoad > medTime && Time.timeSinceLevelLoad < highTime)
+		{
+			MedSpawn();
+		}
+
+		if(Time.timeSinceLevelLoad > highTime)
+		{
+			HighSpawn();
+		}
+	}
+}
