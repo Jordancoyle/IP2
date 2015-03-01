@@ -11,10 +11,12 @@ public class ObstacleSpawn : MonoBehaviour {
 	public float lowTime;
 	public float medTime;
 	public float highTime;
+
+	private bool lowSpawning = false, medSpawning = false, highSpawning = false;
 	
 	// Use this for initialization
 	void Start () {
-		
+		Debug.Log ("Spawning Start");
 	}
 	
 	void LowSpawn()
@@ -37,19 +39,22 @@ public class ObstacleSpawn : MonoBehaviour {
 
 	void Update()
 	{
-		if(Time.timeSinceLevelLoad > lowTime && Time.timeSinceLevelLoad < medTime)
+		if (!lowSpawning && Time.timeSinceLevelLoad > lowTime && Time.timeSinceLevelLoad < medTime)
 		{
 			LowSpawn();
+			lowSpawning = true;
 		}
 
-		if (Time.timeSinceLevelLoad > medTime && Time.timeSinceLevelLoad < highTime)
+		if (!medSpawning && Time.timeSinceLevelLoad > medTime && Time.timeSinceLevelLoad < highTime)
 		{
 			MedSpawn();
+			medSpawning = true;
 		}
-
-		if(Time.timeSinceLevelLoad > highTime)
+		
+		if(!highSpawning && Time.timeSinceLevelLoad > highTime)
 		{
 			HighSpawn();
+			highSpawning = true;
 		}
 	}
 }

@@ -11,8 +11,9 @@ public class DESTRUCTION : MonoBehaviour {
 		{
 			Debug.Log("Ya'll is ded");
 			return;
-		}
 
+		}
+		
 		//checks if the object has a parent and destroys it
 		if(other.gameObject.transform.parent)
 		{
