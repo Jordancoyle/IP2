@@ -6,8 +6,8 @@ public class ObstacleSpawn : MonoBehaviour {
 	public GameObject[] lowDanger;
 	public GameObject[] medDanger;
 	public GameObject[] highDanger;
-	public float minSpawn = 10.0f;
-	public float maxSpawn = 12.0f;
+	public float minSpawn = 15.0f;
+	public float maxSpawn = 20.0f;
 	public float lowTime;
 	public float medTime;
 	public float highTime;
