@@ -10,7 +10,7 @@ public class EndSceneScript : MonoBehaviour {
 	void Start () {
 
 		timePlayed = gameObject.GetComponent<Text>();
-		timePlayed.text = "Your time was: " + ((PermaObject) GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime.ToString () + " Seconds";
+		timePlayed.text = "Your time was: " + ((PermaObject) GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime.ToString ("0.00") + " Seconds";
 	
 	}
 	

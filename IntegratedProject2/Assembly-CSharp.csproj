@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\PermaObject.cs" />
      <Compile Include="Assets\Scripts\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\PlayerSliding.cs" />
+     <Compile Include="Assets\Scripts\PowerUpScript.cs" />
      <Compile Include="Assets\Scripts\SceneChange.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
  <Reference Include="UnityEngine.UI">
