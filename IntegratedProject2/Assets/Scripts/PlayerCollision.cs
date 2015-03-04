@@ -37,6 +37,7 @@ public class PlayerCollision : MonoBehaviour {
 			Debug.Log ("shield");
 			shield = true;
 			gameObject.layer = 10;
+			Destroy(collision.gameObject);
 		}
 
 
