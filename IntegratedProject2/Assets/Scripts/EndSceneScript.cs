@@ -1,23 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class EndSceneScript : MonoBehaviour {
 
+	public Text timePlayed;
+
 	// Use this for initialization
 	void Start () {
+
+		timePlayed = gameObject.GetComponent<Text>();
+		timePlayed.text = "Your time was: " + ((PermaObject) GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime.ToString () + " Seconds";
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	void OnGUI(){
-
-		float time = ((PermaObject) GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime;
-
-		GUI.Label (new Rect ((Screen.width/2)-50, (Screen.height/2)- 20, 200, 40), "You Ran For " + time.ToString("0.0") + " Seconds");
-
 	}
 }
