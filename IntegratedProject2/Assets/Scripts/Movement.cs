@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour {
 	public float speed = 7.0f;
 	public float maxSpeed = 25.0f;
 	public float jumpForce = 300.0f;
-	public float altJumpForce = 10.0f;
+	public float altJumpForce = 50000.0f;
 	public float airRes = 20.0f;
 	public Transform groundCheck;
 	public LayerMask groundMask;
@@ -54,7 +54,7 @@ public class Movement : MonoBehaviour {
 		if(Input.touchCount == 1)
 		{
 			//checks if player is grounded before jumping
-			if(grounded)
+			if(grounded == true)
 			{
 				grounded = false;
 				rigidbody2D.AddForce (new Vector2(0.0f, altJumpForce));
