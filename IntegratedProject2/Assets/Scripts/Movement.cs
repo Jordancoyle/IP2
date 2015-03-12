@@ -21,8 +21,6 @@ public class Movement : MonoBehaviour {
 		{
 			Debug.Log ("herro");
 		}
-
-
 	
 	}
 	//to be developed
