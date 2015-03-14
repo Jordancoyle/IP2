@@ -19,7 +19,7 @@ public class PlayerCollision : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		GameObject player = GameObject.Find("Player");
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		PowerUpScript pus = player.GetComponent<PowerUpScript>();
 		bool xshield = pus.shield;
 
