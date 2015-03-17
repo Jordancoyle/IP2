@@ -24,21 +24,20 @@ public class PowerUpScript : MonoBehaviour {
 		if (other.gameObject.tag == "shield") {
 			Debug.Log ("shield");
 			shield = true;
-			gameObject.collider2D.isTrigger = true;
-			gameObject.layer = 10;
+			//gameObject.collider2D.isTrigger = true;
+			//gameObject.layer = 14;
 			Destroy(other.gameObject);
 		}
 	}
 
 	IEnumerator PowerUpMethod(){
-		if (shield == true) {
-			yield return new WaitForSeconds (powerUpTimer);
-			Debug.Log ("end shield");
-			shield = false;
-			gameObject.collider2D.isTrigger = false;
-			gameObject.layer = 0;
+        if (shield == true)
+        {
+            yield return new WaitForSeconds(powerUpTimer);
+            Debug.Log("end shield");
+            //gameObject.collider2D.isTrigger = false;
+            shield = false;
+        }		
 			
-			
-		}
 	}
 }

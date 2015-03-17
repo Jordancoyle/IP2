@@ -31,5 +31,10 @@ public class PlayerCollision : MonoBehaviour {
 			Application.LoadLevel("EndScene");
 
 		}
+
+        if (collision.gameObject.tag == "obsticle" && xshield == true)
+        {
+            collision.gameObject.SetActive(false);
+        }
 	}
 }
