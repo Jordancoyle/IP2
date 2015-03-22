@@ -5,11 +5,12 @@ public class PowerUpScript : MonoBehaviour {
 
 	public bool shield = false;
 	public int powerUpTimer;
+    private GameObject shieldObject;
 
 	// Use this for initialization
 	void Start () {
 
-
+        shieldObject = GameObject.Find("Shield");
 	
 	}
 	
@@ -33,6 +34,7 @@ public class PowerUpScript : MonoBehaviour {
 	IEnumerator PowerUpMethod(){
         if (shield == true)
         {
+            shieldObject.gameObject.SetActive(true);
             yield return new WaitForSeconds(powerUpTimer);
             Debug.Log("end shield");
             //gameObject.collider2D.isTrigger = false;
