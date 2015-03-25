@@ -1,7 +1,17 @@
 fileFormatVersion: 2
 guid: 9aa6e5c36df9f2c45a05909c468b13ae
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: berty2_0
+    21300002: berty2_1
+    21300004: berty2_2
+    21300006: berty2_3
+    21300008: berty2_4
+    21300010: berty2_5
+    21300012: berty2_6
+    21300014: berty2_7
+    21300016: berty2_8
+    21300018: berty2_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +35,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +52,106 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: berty2_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1600
+        width: 401
+        height: 376
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_1
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1600
+        width: 313
+        height: 341
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_2
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 1612
+        width: 354
+        height: 340
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_3
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1096
+        width: 237
+        height: 371
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_4
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1086
+        width: 323
+        height: 344
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_5
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 1092
+        width: 421
+        height: 253
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 597
+        width: 315
+        height: 339
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_7
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 99
+        width: 315
+        height: 340
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_8
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 89
+        width: 393
+        height: 383
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: berty2_9
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 95
+        width: 313
+        height: 340
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

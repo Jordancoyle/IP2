@@ -25,6 +25,7 @@ public class PowerUpScript : MonoBehaviour {
 		if (other.gameObject.tag == "shield") {
 			Debug.Log ("shield");
 			shield = true;
+            shieldObject.gameObject.SetActive(true);
 			//gameObject.collider2D.isTrigger = true;
 			//gameObject.layer = 14;
 			Destroy(other.gameObject);
@@ -34,7 +35,6 @@ public class PowerUpScript : MonoBehaviour {
 	IEnumerator PowerUpMethod(){
         if (shield == true)
         {
-            shieldObject.gameObject.SetActive(true);
             yield return new WaitForSeconds(powerUpTimer);
             Debug.Log("end shield");
             //gameObject.collider2D.isTrigger = false;
