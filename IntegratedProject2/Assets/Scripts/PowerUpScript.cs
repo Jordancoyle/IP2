@@ -30,20 +30,18 @@ public class PowerUpScript : MonoBehaviour {
             shieldDisplay.gameObject.SetActive(true);
 			Destroy(other.gameObject);
 		}
+     
 	}
 
 	IEnumerator PowerUpMethod(){
         if (shield == true)
         {
             yield return new WaitForSeconds(powerUpTimer);
-            Debug.Log("end shield");
-            shield = false;
-        }
-        else
-        {
             shieldObject.gameObject.SetActive(false);
             shieldDisplay.gameObject.SetActive(false);
+            shield = false;
         }
+        
 			
 	}
 }

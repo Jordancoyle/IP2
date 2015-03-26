@@ -20,15 +20,14 @@ public class PlayerSliding : MonoBehaviour {
 		if(Input.GetButton("Slide"))
 		{
 			gameObject.layer = 10;
-
             animator.SetBool("isSliding", true);
-
 			if(rigidbody2D.velocity.magnitude > 0.0f)
 			{
 				rigidbody2D.AddForce(new Vector2(-slideFriction, 0.0f));
 			}
 		}
 		else{
+
 			gameObject.layer = 0;
             animator.SetBool("isSliding", false);
 		}
