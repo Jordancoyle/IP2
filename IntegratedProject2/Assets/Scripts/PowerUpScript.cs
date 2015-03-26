@@ -5,13 +5,14 @@ public class PowerUpScript : MonoBehaviour {
 
 	public bool shield = false;
 	public int powerUpTimer;
-    private GameObject shieldObject;
+    public GameObject shieldObject;
+    public GameObject shieldDisplay;
 
 	// Use this for initialization
 	void Start () {
 
-        shieldObject = GameObject.Find("Shield");
-	
+        //shieldObject = GameObject.Find("/BigBerty/Shield");
+ 
 	}
 	
 	// Update is called once per frame
@@ -26,8 +27,7 @@ public class PowerUpScript : MonoBehaviour {
 			Debug.Log ("shield");
 			shield = true;
             shieldObject.gameObject.SetActive(true);
-			//gameObject.collider2D.isTrigger = true;
-			//gameObject.layer = 14;
+            shieldDisplay.gameObject.SetActive(true);
 			Destroy(other.gameObject);
 		}
 	}
@@ -37,9 +37,13 @@ public class PowerUpScript : MonoBehaviour {
         {
             yield return new WaitForSeconds(powerUpTimer);
             Debug.Log("end shield");
-            //gameObject.collider2D.isTrigger = false;
             shield = false;
-        }		
+        }
+        else
+        {
+            shieldObject.gameObject.SetActive(false);
+            shieldDisplay.gameObject.SetActive(false);
+        }
 			
 	}
 }

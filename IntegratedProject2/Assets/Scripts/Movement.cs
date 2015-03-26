@@ -8,15 +8,10 @@ public class Movement : MonoBehaviour {
 	public float jumpForce = 300.0f;
 	public float altJumpForce = 50000.0f;
 	public float airRes = 20.0f;
-	//public Transform groundCheck;
-	//public LayerMask groundMask;
-	//public float groundRadius = 0.2f;
 	public bool grounded = false;
     private Animator animator;
-	//private Touch touch;
 	public float distance;
 
-	// Use this for initialization
 	void Start () {
 
         animator = this.GetComponent<Animator>();
@@ -58,27 +53,14 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		//check if groundcheck object touches collider
-		//grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, groundMask);
+        int mask = 1 << LayerMask.NameToLayer("Ground");
 
-		//moves the player in a straight line
-		//rigidbody2D.AddForce (new Vector2(speed, 0.0f));
-		//rigidbody2D.AddForce (new Vector2(speed, 0.0f));
-
-        //Ray ray = new Ray(transform.position, Vector3.down);
-        RaycastHit info;
-
-        int mask = LayerMask.NameToLayer("Ground");
-
-		grounded = Physics2D.Linecast (transform.position, transform.position + (Vector3.down * distance));
-		Debug.DrawLine (transform.position, transform.position + (Vector3.down * distance));
+		grounded = Physics2D.Linecast (transform.position, transform.position + (Vector3.down * distance), mask);
 
 		if(grounded == true && rigidbody2D.velocity.magnitude < maxSpeed)
 		{
 			rigidbody2D.AddForce (new Vector2(speed, 0.0f));
 		}
 		
-
-	
 	}
 }
