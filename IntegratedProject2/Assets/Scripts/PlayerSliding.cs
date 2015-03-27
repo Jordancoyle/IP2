@@ -25,11 +25,11 @@ public class PlayerSliding : MonoBehaviour {
 			{
 				rigidbody2D.AddForce(new Vector2(-slideFriction, 0.0f));
 			}
-		}
 		else{
 
 			gameObject.layer = 0;
             animator.SetBool("isSliding", false);
+		}
 		}
 
 	

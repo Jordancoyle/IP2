@@ -5,7 +5,6 @@ public class PlayerCollision : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 	
 	}
 	
@@ -17,7 +16,7 @@ public class PlayerCollision : MonoBehaviour {
 
 	
 
-	void OnCollisionEnter2D(Collision2D collision)
+	void OnTriggerEnter2D(Collider2D collision)
 	{
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		PowerUpScript pus = player.GetComponent<PowerUpScript>();
@@ -34,7 +33,9 @@ public class PlayerCollision : MonoBehaviour {
 
         if (collision.gameObject.tag == "obsticle" && xshield == true)
         {
-            collision.gameObject.SetActive(false);
+            //collision.gameObject.SetActive(false);
+            //Physics2D.IgnoreCollision(playerCollider, collision.collider);
+            Destroy(collision.gameObject);
         }
 	}
 }
