@@ -4,9 +4,8 @@ using System.Collections;
 public class PlayerCollision : MonoBehaviour {
 
     public float obstacleSlowDown = 20.0f;
-	public AudioClip Obstacle;
 
-		// Use this for initialization
+	// Use this for initialization
 	void Start () {
 	
 	}
@@ -26,10 +25,9 @@ public class PlayerCollision : MonoBehaviour {
 		bool xshield = pus.shield;
 
 		//kill player
-		if (collision.gameObject.tag == "obsticle" && !xshield)
-		{
-			audio.PlayOneShot(Obstacle);
-			Debug.Log ("obsticle hit");
+		if (collision.gameObject.tag == "obsticle" && !xshield) {
+
+			Debug.Log ("obstacle hit");
             rigidbody2D.AddForce(new Vector2(-obstacleSlowDown, 0.0f));
             Destroy(collision.gameObject);
 

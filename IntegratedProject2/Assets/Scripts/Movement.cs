@@ -11,7 +11,8 @@ public class Movement : MonoBehaviour {
 	public bool grounded = false;
     private Animator animator;
 	public float distance;
-	public AudioClip Jumping;
+
+	float velocity = 0;
 
 	void Start () {
 
@@ -25,16 +26,14 @@ public class Movement : MonoBehaviour {
 	{
 
 		//checks button input
-		if (Input.GetButtonDown ("Jump") && grounded == true)
-
+		if(Input.GetButtonDown("Jump") && grounded == true)
 		{
-			audio.PlayOneShot (Jumping);
 			//checks if player is grounded before jumping
 				grounded = false;
                 animator.SetBool("isJumping", true);
-				rigidbody2D.AddForce (new Vector2(0.0f, jumpForce));
+				rigidbody2D.AddForce (new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);
 				rigidbody2D.AddForce (new Vector2(-airRes, 0.0f));
-	}
+		}
         else
         {
             animator.SetBool("isJumping", false);
@@ -51,12 +50,13 @@ public class Movement : MonoBehaviour {
 			}
 
 		}*/
+
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        int mask = 1 << LayerMask.NameToLayer("Ground");
+		int mask = 1 << LayerMask.NameToLayer("Ground");
 
 		grounded = Physics2D.Linecast (transform.position, transform.position + (Vector3.down * distance), mask);
 

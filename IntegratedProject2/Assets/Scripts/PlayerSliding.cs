@@ -17,21 +17,20 @@ public class PlayerSliding : MonoBehaviour {
 	void Update () {
 
 
-		if(Input.GetButton("Slide"))
-		{
-			gameObject.layer = 10;
-            animator.SetBool("isSliding", true);
-			if(rigidbody2D.velocity.magnitude > 0.0f)
-			{
-				rigidbody2D.AddForce(new Vector2(-slideFriction, 0.0f));
-			}
-		else{
+		if (Input.GetButtonDown ("Slide")) {
 
-			gameObject.layer = 0;
-            animator.SetBool("isSliding", false);
-		}
-		}
+			gameObject.layer = 10;
+			animator.SetBool ("isSliding", true);
+			if (rigidbody2D.velocity.magnitude > 0.0f) {
+				rigidbody2D.AddForce (new Vector2 (-slideFriction, 0.0f));
+			}
+			if(Input.GetButtonUp("Slide"))
+			{
+				gameObject.layer = 0;
+				//animator.SetBool("isSliding", false);
+			}
 
 	
 	}
+}
 }

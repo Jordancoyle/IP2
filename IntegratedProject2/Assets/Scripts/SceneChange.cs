@@ -8,7 +8,6 @@ public class SceneChange : MonoBehaviour {
     public GameObject displayTimeText;
     public Text currentTime;
 
-
     void Start()
     {
         currentTime = displayTimeText.gameObject.GetComponent<Text>();
@@ -18,13 +17,11 @@ public class SceneChange : MonoBehaviour {
 	public void ChangeScene(string sceneName)
 	{
 		Application.LoadLevel(sceneName);
-
 	}
 
 	public void ExitGame()
 	{
 		Application.Quit();
-
 	}
 
     public void Settings()

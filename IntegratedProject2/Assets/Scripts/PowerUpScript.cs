@@ -17,12 +17,6 @@ public class PowerUpScript : MonoBehaviour {
         //shieldObject = GameObject.Find("/BigBerty/Shield");
  
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		StartCoroutine (PowerUpMethod ());
-        StartCoroutine(SlowMotion());
-	}
 
 	void OnTriggerEnter2D(Collider2D other){
 
@@ -30,42 +24,39 @@ public class PowerUpScript : MonoBehaviour {
 		if (other.gameObject.tag == "shield") {
 			Debug.Log ("shield");
 			shield = true;
-            shieldObject.gameObject.SetActive(true);
-            shieldDisplay.gameObject.SetActive(true);
+			StartCoroutine (PowerUpMethod ());
 			Destroy(other.gameObject);
 		}
 
         if(other.gameObject.tag == "Slow")
         {
             slow = true;
-            Time.timeScale = 0.5f;
-            //Time.fixedDeltaTime = 0.5f * 0.02f;
-            slowDisplay.gameObject.SetActive(true);
-            Destroy(other.gameObject);
+			Destroy(other.gameObject);
+			StartCoroutine(SlowMotion());
         }
      
 	}
 
-	IEnumerator PowerUpMethod(){
-        if (shield == true)
-        {
+	IEnumerator PowerUpMethod()
+	{
+			shieldObject.gameObject.SetActive(true);
+			shieldDisplay.gameObject.SetActive(true);
             yield return new WaitForSeconds(powerUpTimer);
             shieldObject.gameObject.SetActive(false);
             shieldDisplay.gameObject.SetActive(false);
             shield = false;
-        }
         	
 	}
 
     IEnumerator SlowMotion()
     {
-        if (slow)
-        {
+			Time.timeScale /= 2;
+			Time.fixedDeltaTime /= 2;
+			slowDisplay.gameObject.SetActive(true);
             yield return new WaitForSeconds(slowMotionTimer);
-            Time.timeScale = 1.0f;
-            //Time.fixedDeltaTime = 0.02f;
+            Time.timeScale *= 2;
+            Time.fixedDeltaTime *= 2;
             slowDisplay.gameObject.SetActive(false);
             slow = false;
-        }
     }
 }
