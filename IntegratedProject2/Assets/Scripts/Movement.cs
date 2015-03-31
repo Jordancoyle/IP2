@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour {
 	public bool grounded = false;
     private Animator animator;
 	public float distance;
+	public AudioClip Jumping;
 
 	void Start () {
 
@@ -24,8 +25,10 @@ public class Movement : MonoBehaviour {
 	{
 
 		//checks button input
-		if(Input.GetButtonDown("Jump") && grounded == true)
+		if (Input.GetButtonDown ("Jump") && grounded == true)
+
 		{
+			audio.PlayOneShot (Jumping);
 			//checks if player is grounded before jumping
 				grounded = false;
                 animator.SetBool("isJumping", true);
