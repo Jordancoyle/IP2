@@ -4,9 +4,12 @@ using System.Collections;
 public class PowerUpScript : MonoBehaviour {
 
 	public bool shield = false;
+    public bool slow = false;
 	public int powerUpTimer;
+    public int slowMotionTimer;
     public GameObject shieldObject;
     public GameObject shieldDisplay;
+    public GameObject slowDisplay;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +21,7 @@ public class PowerUpScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		StartCoroutine (PowerUpMethod ());
+        StartCoroutine(SlowMotion());
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -30,6 +34,15 @@ public class PowerUpScript : MonoBehaviour {
             shieldDisplay.gameObject.SetActive(true);
 			Destroy(other.gameObject);
 		}
+
+        if(other.gameObject.tag == "Slow")
+        {
+            slow = true;
+            Time.timeScale = 0.5f;
+            //Time.fixedDeltaTime = 0.5f * 0.02f;
+            slowDisplay.gameObject.SetActive(true);
+            Destroy(other.gameObject);
+        }
      
 	}
 
@@ -41,7 +54,18 @@ public class PowerUpScript : MonoBehaviour {
             shieldDisplay.gameObject.SetActive(false);
             shield = false;
         }
-        
-			
+        	
 	}
+
+    IEnumerator SlowMotion()
+    {
+        if (slow)
+        {
+            yield return new WaitForSeconds(slowMotionTimer);
+            Time.timeScale = 1.0f;
+            //Time.fixedDeltaTime = 0.02f;
+            slowDisplay.gameObject.SetActive(false);
+            slow = false;
+        }
+    }
 }

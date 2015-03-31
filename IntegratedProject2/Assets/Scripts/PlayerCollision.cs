@@ -28,8 +28,6 @@ public class PlayerCollision : MonoBehaviour {
 		if (collision.gameObject.tag == "obsticle" && !xshield) {
 
 			Debug.Log ("obsticle hit");
-			//((PermaObject) GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime = Time.timeSinceLevelLoad;
-            //Application.LoadLevel("EndScene");
             rigidbody2D.AddForce(new Vector2(-obstacleSlowDown, 0.0f));
             Destroy(collision.gameObject);
 
@@ -37,9 +35,13 @@ public class PlayerCollision : MonoBehaviour {
 
         if (collision.gameObject.tag == "obsticle" && xshield == true)
         {
-            //collision.gameObject.SetActive(false);
-            //Physics2D.IgnoreCollision(playerCollider, collision.collider);
             Destroy(collision.gameObject);
+        }
+
+        if(collision.gameObject.tag == "Death")
+        {
+            ((PermaObject)GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime = Time.timeSinceLevelLoad;
+            Application.LoadLevel("EndScene");
         }
 	}
 }

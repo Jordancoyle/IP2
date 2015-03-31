@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour {
 
         animator = this.GetComponent<Animator>();
 		CircleCollider2D circle = (CircleCollider2D)this.collider2D;
-		distance = circle.radius + 0.5f;
+		distance = circle.radius + 0.8f;
 	
 	}
 

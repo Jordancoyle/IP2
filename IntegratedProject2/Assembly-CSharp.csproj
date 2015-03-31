@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\CameraPlayer.cs" />
      <Compile Include="Assets\Scripts\DESTRUCTION.cs" />
      <Compile Include="Assets\Scripts\EndSceneScript.cs" />
+     <Compile Include="Assets\Scripts\GroundSpawn.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\ObstacleSpawn.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
