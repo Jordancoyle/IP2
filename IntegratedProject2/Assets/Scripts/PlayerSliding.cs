@@ -16,19 +16,25 @@ public class PlayerSliding : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        bool isUp = Input.GetButtonUp("Slide");
 
-		if (Input.GetButtonDown ("Slide")) {
+        if (isUp)
+        {
+            Debug.Log("Up");
+            gameObject.layer = 0;
+            animator.SetBool("isSliding", false);
+            animator.SetBool("isRunning", true);
+        }
+
+		if (Input.GetButtonDown("Slide")) {
 
 			gameObject.layer = 10;
 			animator.SetBool ("isSliding", true);
 			if (rigidbody2D.velocity.magnitude > 0.0f) {
 				rigidbody2D.AddForce (new Vector2 (-slideFriction, 0.0f));
 			}
-			if(Input.GetButtonUp("Slide"))
-			{
-				gameObject.layer = 0;
-				//animator.SetBool("isSliding", false);
-			}
+
+		
 
 	
 	}

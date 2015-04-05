@@ -28,7 +28,10 @@ public class PlayerCollision : MonoBehaviour {
 		if (collision.gameObject.tag == "obsticle" && !xshield) {
 
 			Debug.Log ("obstacle hit");
-            rigidbody2D.AddForce(new Vector2(-obstacleSlowDown, 0.0f));
+            if(rigidbody2D.velocity.magnitude > 0.0f)
+            {
+                rigidbody2D.AddForce(new Vector2(-obstacleSlowDown, 0.0f));
+            }
             Destroy(collision.gameObject);
 
 		}

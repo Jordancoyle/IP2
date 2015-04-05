@@ -10,6 +10,11 @@ public class SceneChange : MonoBehaviour {
 
     void Start()
     {
+        
+    }
+
+    void Update()
+    {
         currentTime = displayTimeText.gameObject.GetComponent<Text>();
         currentTime.text = "Time Running: " + Time.timeSinceLevelLoad.ToString("0.0") + " Seconds";
     }

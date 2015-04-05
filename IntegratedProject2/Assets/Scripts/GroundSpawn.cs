@@ -4,7 +4,7 @@ using System.Collections;
 public class GroundSpawn : MonoBehaviour {
 
     public GameObject[] ground;
-    public GameObject lul;
+    public GameObject sizeCheck;
     public GameObject lastGround;
 	public int dropChance = 10;
     float groundWidth;
@@ -17,8 +17,8 @@ public class GroundSpawn : MonoBehaviour {
     {
 
         lastPosition = lastGround.transform.position;
-        groundWidth = lul.renderer.bounds.size.x;
-        groundHeight = lul.renderer.bounds.size.y;
+        groundWidth = sizeCheck.renderer.bounds.size.x;
+        groundHeight = sizeCheck.renderer.bounds.size.y;
         Debug.Log(groundWidth);
         Debug.Log(groundHeight);
 
@@ -34,6 +34,7 @@ public class GroundSpawn : MonoBehaviour {
 			spawned = false;
 			myPrefabInstance = Instantiate (ground [Random.Range (0, ground.Length - 1)], lastPosition + offset, Quaternion.identity) as GameObject;
 		}
+
         lastPosition = myPrefabInstance.transform.position;
     }
 }
