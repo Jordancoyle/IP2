@@ -33,6 +33,21 @@ public class SceneChange : MonoBehaviour {
         Time.timeScale = 0.0f;
     }
 
+    public void Mute()
+    {
+        if (AudioListener.pause == true)
+        {
+            AudioListener.pause = false;
+            AudioListener.volume = 1;
+        }
+        else
+        {
+            AudioListener.pause = true;
+            AudioListener.volume = 0;
+        }
+
+    }
+
     void Update()
     {
         currentTime = displayTimeText.gameObject.GetComponent<Text>();

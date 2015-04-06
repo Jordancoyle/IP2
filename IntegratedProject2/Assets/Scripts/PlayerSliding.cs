@@ -24,9 +24,9 @@ public class PlayerSliding : MonoBehaviour {
         {
             Debug.Log("Up");
             gameObject.layer = 0;
-            animator.enabled = true;
-            //animator.SetBool("isSliding", false);
-           //animator.SetBool("isRunning", true);
+            //animator.enabled = true;
+            animator.SetBool("isSliding", false);
+            //animator.SetBool("isRunning", true);
         }
 
 		if (Input.GetButtonDown("Slide")) {
@@ -34,10 +34,8 @@ public class PlayerSliding : MonoBehaviour {
             Debug.Log("down");
             AudioSource.PlayClipAtPoint(slide, transform.position);
 			gameObject.layer = 10;
-            animator.enabled = false;
-            animation.Play("Berty_Slide");
-            animation.wrapMode = WrapMode.Once;
-			//animator.SetBool ("isSliding", true);
+            //animator.enabled = false;
+			animator.SetBool ("isSliding", true);
 			if (rigidbody2D.velocity.magnitude > 0.0f) {
 				rigidbody2D.AddForce (new Vector2 (-slideFriction, 0.0f));
 			}
