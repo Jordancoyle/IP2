@@ -15,10 +15,10 @@ public class PlayerCollision : MonoBehaviour {
     IEnumerator DeathClip()
     {
         AudioSource.PlayClipAtPoint(death, transform.position);
-        Destroy(player);
-        yield return new WaitForSeconds(death.length - 0.1f);
-        ((PermaObject)GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime = Time.timeSinceLevelLoad;
-        Application.LoadLevel("EndScene");
+        yield return new WaitForSeconds(death.length);
+        Application.LoadLevel("scene1");
+        /*((PermaObject)GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime = Time.timeSinceLevelLoad;
+        Application.LoadLevel("EndScene");*/
     }
 
 	void OnTriggerEnter2D(Collider2D collision)

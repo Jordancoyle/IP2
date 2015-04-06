@@ -14,23 +14,17 @@ public class SceneChange : MonoBehaviour {
         
     }
 
-    void Update()
+    public void ChangeScene(string sceneName)
     {
-        currentTime = displayTimeText.gameObject.GetComponent<Text>();
-        currentTime.text = "Time Running: " + Time.timeSinceLevelLoad.ToString("0.0") + " Seconds";
+        AudioSource.PlayClipAtPoint(click, transform.position);
+        Application.LoadLevel(sceneName);
     }
 
-	public void ChangeScene(string sceneName)
-	{
+    public void ExitGame()
+    {
         AudioSource.PlayClipAtPoint(click, transform.position);
-		Application.LoadLevel(sceneName);
-	}
-
-	public void ExitGame()
-	{
-        AudioSource.PlayClipAtPoint(click, transform.position);
-		Application.Quit();
-	}
+        Application.Quit();
+    }
 
     public void Settings()
     {
@@ -38,4 +32,11 @@ public class SceneChange : MonoBehaviour {
         AudioSource.PlayClipAtPoint(click, transform.position);
         Time.timeScale = 0.0f;
     }
+
+    void Update()
+    {
+        currentTime = displayTimeText.gameObject.GetComponent<Text>();
+        currentTime.text = "Time Running: " + Time.timeSinceLevelLoad.ToString("0.0") + " Seconds";
+    }
+
 }
