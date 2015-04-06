@@ -10,6 +10,8 @@ public class PowerUpScript : MonoBehaviour {
     public GameObject shieldObject;
     public GameObject shieldDisplay;
     public GameObject slowDisplay;
+    public AudioClip puA;
+    public AudioClip puB;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,7 @@ public class PowerUpScript : MonoBehaviour {
 		if (other.gameObject.tag == "shield") {
 			Debug.Log ("shield");
 			shield = true;
+            AudioSource.PlayClipAtPoint(puA, transform.position);
 			StartCoroutine (PowerUpMethod ());
 			Destroy(other.gameObject);
 		}
@@ -31,6 +34,7 @@ public class PowerUpScript : MonoBehaviour {
         if(other.gameObject.tag == "Slow")
         {
             slow = true;
+            AudioSource.PlayClipAtPoint(puB, transform.position);
 			Destroy(other.gameObject);
 			StartCoroutine(SlowMotion());
         }

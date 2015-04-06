@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour {
 	public float altJumpForce = 50000.0f;
 	public float airRes = 20.0f;
 	public bool grounded = false;
+    public AudioClip jumping;
     private Animator animator;
 	public float distance;
 
@@ -29,6 +30,7 @@ public class Movement : MonoBehaviour {
 		if(Input.GetButtonDown("Jump") && grounded == true)
 		{
 			//checks if player is grounded before jumping
+            AudioSource.PlayClipAtPoint(jumping, transform.position);
 				grounded = false;
                 animator.SetBool("isJumping", true);
 				rigidbody2D.AddForce (new Vector2(0.0f, jumpForce), ForceMode2D.Impulse);

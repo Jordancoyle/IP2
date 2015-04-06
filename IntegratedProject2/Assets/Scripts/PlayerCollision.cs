@@ -3,20 +3,23 @@ using System.Collections;
 
 public class PlayerCollision : MonoBehaviour {
 
+    public AudioClip death;
     public float obstacleSlowDown = 20.0f;
+    public GameObject player;
+   
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	
-	}
-
-	
+    IEnumerator DeathClip()
+    {
+        AudioSource.PlayClipAtPoint(death, transform.position);
+        Destroy(player);
+        yield return new WaitForSeconds(death.length - 0.1f);
+        ((PermaObject)GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime = Time.timeSinceLevelLoad;
+        Application.LoadLevel("EndScene");
+    }
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -43,8 +46,8 @@ public class PlayerCollision : MonoBehaviour {
 
         if(collision.gameObject.tag == "Death")
         {
-            ((PermaObject)GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime = Time.timeSinceLevelLoad;
-            Application.LoadLevel("EndScene");
+            StartCoroutine(DeathClip());
         }
+
 	}
 }

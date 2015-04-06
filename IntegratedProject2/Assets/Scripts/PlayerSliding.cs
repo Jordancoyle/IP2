@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerSliding : MonoBehaviour {
 
 	public float slideFriction = 2.0f;
+    public AudioClip slide;
     private Animator animator;
 
 	// Use this for initialization
@@ -28,6 +29,7 @@ public class PlayerSliding : MonoBehaviour {
 
 		if (Input.GetButtonDown("Slide")) {
 
+            AudioSource.PlayClipAtPoint(slide, transform.position);
 			gameObject.layer = 10;
 			animator.SetBool ("isSliding", true);
 			if (rigidbody2D.velocity.magnitude > 0.0f) {
