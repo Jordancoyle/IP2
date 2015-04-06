@@ -24,15 +24,17 @@ public class PlayerSliding : MonoBehaviour {
         {
             Debug.Log("Up");
             gameObject.layer = 0;
+            animator.enabled = true;
             //animator.SetBool("isSliding", false);
            //animator.SetBool("isRunning", true);
         }
 
 		if (Input.GetButtonDown("Slide")) {
 
+            Debug.Log("down");
             AudioSource.PlayClipAtPoint(slide, transform.position);
 			gameObject.layer = 10;
-            animator.SetBool("isRunning", false);
+            animator.enabled = false;
             animation.Play("Berty_Slide");
             animation.wrapMode = WrapMode.Once;
 			//animator.SetBool ("isSliding", true);
