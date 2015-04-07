@@ -16,9 +16,8 @@ public class PlayerCollision : MonoBehaviour {
     {
         AudioSource.PlayClipAtPoint(death, transform.position);
         yield return new WaitForSeconds(death.length);
-        Application.LoadLevel("scene1");
-        /*((PermaObject)GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime = Time.timeSinceLevelLoad;
-        Application.LoadLevel("EndScene");*/
+        ((PermaObject)GameObject.Find("PermaObject").GetComponent(typeof(PermaObject))).killTime = Time.timeSinceLevelLoad;
+        Application.LoadLevel("EndScene");
     }
 
 	void OnTriggerEnter2D(Collider2D collision)
